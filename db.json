@@ -285,6 +285,42 @@
       "date": "",
       "time": "",
       "attendees": []
+    },
+    {
+      "id": 4227705,
+      "user": {
+        "id": "abc123",
+        "name": "Adam"
+      },
+      "category": "food",
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam"
+      },
+      "title": "eating healthy food",
+      "description": "valencia",
+      "location": "",
+      "date": "",
+      "time": "",
+      "attendees": []
+    },
+    {
+      "id": 4971116,
+      "user": {
+        "id": "abc123",
+        "name": "Adam"
+      },
+      "category": "housing",
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam"
+      },
+      "title": "Puppy",
+      "description": "Party",
+      "location": "Valencia",
+      "date": "2021-10-01T22:17:00.000Z",
+      "time": "2:00",
+      "attendees": []
     }
   ]
 }
