@@ -2,34 +2,53 @@
   <div>
     <h1>Create an Event</h1>
     <form @submit.prevent="createEvent">
-      <label>Select a category</label>
-      <select v-model="event.category">
-        <option v-for="cat in categories" :key="cat">{{ cat }}</option>
-      </select>
+      <base-select
+        label="Select a category"
+        :options="categories"
+        v-model="event.category"
+      />
 
       <h3>Name & describe your event</h3>
-      <base-input label="Title" v-model="event.title" type="text" placeholder="Title" class="field" />
+      <base-input
+        label="Title"
+        v-model="event.title"
+        type="text"
+        placeholder="Title"
+        class="field"
+      />
 
-      <base-input label="Description" v-model="event.description" type="text" placeholder="Description" class="field" />
+      <base-input
+        label="Description"
+        v-model="event.description"
+        type="text"
+        placeholder="Description"
+        class="field"
+      />
 
       <h3>Where is your event?</h3>
-      <base-input label="Location" v-model="event.location" type="text" placeholder="Location" class="field" />
+      <base-input
+        label="Location"
+        v-model="event.location"
+        type="text"
+        placeholder="Location"
+        class="field"
+      />
 
       <h3>When is your event?</h3>
 
       <div class="field">
         <label>Date</label>
-        <datepicker v-model="event.date" placeholder="Select a date"/>
+        <datepicker v-model="event.date" placeholder="Select a date" />
       </div>
 
-      <div class="field">
-        <label>Select a time</label>
-        <select v-model="event.time">
-          <option v-for="time in times" :key="time">{{ time }}</option>
-        </select>
-      </div>
+      <base-select
+        label="Select a time"
+        :options="times"
+        v-model="event.time"
+        class="field"
+      />
 
-      <input type="submit" class="button -fill-gradient" value="Submit"/>
+      <input type="submit" class="button -fill-gradient" value="Submit" />
     </form>
   </div>
 </template>
@@ -41,7 +60,7 @@ import nProgress from 'nprogress'
 
 export default {
   components: {
-    Datepicker
+    Datepicker,
   },
   data() {
     const times = []
@@ -51,7 +70,7 @@ export default {
     return {
       times,
       categories: this.$store.state.categories,
-      event: this.createFreshEventObject()
+      event: this.createFreshEventObject(),
     }
   },
   methods: {
@@ -62,7 +81,7 @@ export default {
         .then(() => {
           this.$router.push({
             name: 'event-show',
-            params: { id: this.event.id }
+            params: { id: this.event.id },
           })
           this.event = this.createFreshEventObject()
         })
@@ -84,10 +103,10 @@ export default {
         location: '',
         date: '',
         time: '',
-        attendees: []
+        attendees: [],
       }
-    }
-  }
+    },
+  },
 }
 </script>
 
